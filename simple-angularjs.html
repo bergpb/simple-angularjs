@@ -1,0 +1,46 @@
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Simple AngularJS App</title>
+      <link rel="stylesheet" href="app.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+      <script src="app.js"></script>
+   </head>
+   <body ng-app="app">
+      <div ng-controller="AppController" class="container">
+         <div class="row pt-4 col-md-6 offset-md-3">
+            <div class="col">
+               <form>
+                  <div class="form-group">
+                     <label>Nome:</label>
+                     <input type="text" class="form-control" ng-model="firstName" placeholder="Digite seu nome">
+                  </div>
+                  <div class="form-group">
+                     <label>Sobrenome</label>
+                     <input type="text" class="form-control" ng-model="lastName" placeholder="Digite seu sobrenome">
+                  </div>
+                  <div class="form-group">
+                     <label>Data</label>
+                     <input ng-init="getData()" type="text" class="form-control" ng-model="date" ng-value="date | andrea:''">
+                  </div>
+                  <ul ng-class="firstName != '' ? 'change-text' : 'change'">
+                    <li ng-repeat="friend in friends">
+                      {{friend.name}} is {{friend.age}} years old.
+                    </li>
+                  </ul>
+                  <button ng-click="clearFields()" class="btn btn-warning">Limpar Campos</button>
+               </form>
+            </div>
+         </div>
+         <div class="row pt-4 col-md-6 offset-md-3">
+            <p>
+               <span ng-show="firstName != null" class="mx-auto">Nome: {{firstName}}</span>
+               <br>
+               <span ng-show="lastName != null" class="mx-auto">Sobrenome: {{lastName}}</span>
+            </p>
+         </div>
+      </div>
+   </body>
+  </html>
+
