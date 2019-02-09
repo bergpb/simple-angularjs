@@ -1,0 +1,20 @@
+<!doctype html>
+<html ng-app="app">
+	<head>
+		<title>Hello AngularJS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <script src="./ArticlesController.js"></script>
+	</head>
+
+	<body>
+		<div ng-controller="ArticlesController">
+			<table>
+        <input ng-model="article.title" placeholder="Escreva o título">
+        <input ng-model="article.descricao" placeholder="Escreva a descrição">
+        <button ng-click="editArticle(article.id)">Editar artigo</button>
+  			<button ng-click="deletaArticle(article.id)">Remover artigo</button>
+      </table>
+		</div>
+	</body>
+</html>
